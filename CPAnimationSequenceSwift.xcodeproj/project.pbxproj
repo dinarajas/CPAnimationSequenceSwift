@@ -12,6 +12,9 @@
 		568B13501BCC1F5D00E1575F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 568B134E1BCC1F5D00E1575F /* Main.storyboard */; };
 		568B13521BCC1F5D00E1575F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568B13511BCC1F5D00E1575F /* Assets.xcassets */; };
 		568B13551BCC1F5D00E1575F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 568B13531BCC1F5D00E1575F /* LaunchScreen.storyboard */; };
+		568B135F1BCC207700E1575F /* CPAnimationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B135E1BCC207700E1575F /* CPAnimationStep.swift */; settings = {ASSET_TAGS = (); }; };
+		568B13611BCC208500E1575F /* CPAnimationProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B13601BCC208500E1575F /* CPAnimationProgram.swift */; settings = {ASSET_TAGS = (); }; };
+		568B13631BCC209300E1575F /* CPAnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568B13621BCC209300E1575F /* CPAnimationSequence.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		568B13511BCC1F5D00E1575F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		568B13541BCC1F5D00E1575F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		568B13561BCC1F5D00E1575F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		568B135E1BCC207700E1575F /* CPAnimationStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPAnimationStep.swift; sourceTree = "<group>"; };
+		568B13601BCC208500E1575F /* CPAnimationProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPAnimationProgram.swift; sourceTree = "<group>"; };
+		568B13621BCC209300E1575F /* CPAnimationSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPAnimationSequence.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +65,21 @@
 				568B134E1BCC1F5D00E1575F /* Main.storyboard */,
 				568B13511BCC1F5D00E1575F /* Assets.xcassets */,
 				568B13531BCC1F5D00E1575F /* LaunchScreen.storyboard */,
+				568B135D1BCC1FDF00E1575F /* SwiftAnimation */,
 				568B13561BCC1F5D00E1575F /* Info.plist */,
 			);
 			path = CPAnimationSequenceSwift;
 			sourceTree = "<group>";
+		};
+		568B135D1BCC1FDF00E1575F /* SwiftAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				568B135E1BCC207700E1575F /* CPAnimationStep.swift */,
+				568B13601BCC208500E1575F /* CPAnimationProgram.swift */,
+				568B13621BCC209300E1575F /* CPAnimationSequence.swift */,
+			);
+			path = SwiftAnimation;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -90,6 +107,7 @@
 		568B133F1BCC1F5C00E1575F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = CP;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "April Wings";
 				TargetAttributes = {
@@ -136,6 +154,9 @@
 			files = (
 				568B134D1BCC1F5D00E1575F /* ViewController.swift in Sources */,
 				568B134B1BCC1F5D00E1575F /* AppDelegate.swift in Sources */,
+				568B13611BCC208500E1575F /* CPAnimationProgram.swift in Sources */,
+				568B13631BCC209300E1575F /* CPAnimationSequence.swift in Sources */,
+				568B135F1BCC207700E1575F /* CPAnimationStep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
