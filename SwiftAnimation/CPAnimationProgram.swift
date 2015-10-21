@@ -61,14 +61,14 @@ class CPAnimationProgram: CPAnimationStep {
     // MARK: Sequence generator
     func longestDuration() -> NSTimeInterval {
         var longestAnimation: CPAnimationStep?
-        for current:CPAnimationStep in self.animationSteps {
+        for current: CPAnimationStep in self.animationSteps as! [CPAnimationStep] {
             let currentDuration = current.delay + current.duration
             if (longestAnimation == nil || currentDuration > longestAnimation!.delay + longestAnimation!.duration) {
                 longestAnimation = current
             }
         }
         assert(longestAnimation == nil, "Programs seems to have no steps to proceed")
-        return self.delay + longestAnimation!.delay + longestAnimation!.duration
+        return Double(self.delay + longestAnimation!.delay + longestAnimation!.duration)
     }
     
     override func animationStepsArray() -> [AnyObject] {
