@@ -9,12 +9,18 @@
 import Foundation
 import UIKit
 
-class CPAnimationStep: NSObject {
+class CPAnimationStep: CustomStringConvertible {
     
     var delay: NSTimeInterval = 0
     var duration: NSTimeInterval = 0
     var animation: () -> () = {}
     var options: UIViewAnimationOptions = UIViewAnimationOptions.CurveEaseInOut
+    
+    var description: String {
+        get {
+            return "Delay: \(self.delay), Duration: \(self.duration)"
+        }
+    }
     
     private var consumableSteps: Array<AnyObject>?
     private var cancelRequested: Bool = false
@@ -46,7 +52,7 @@ class CPAnimationStep: NSObject {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC) * afterDelay)), dispatch_get_main_queue(), animations)
     }
     
-    func animationStepsArray() -> [AnyObject] {
+    func animationStepsArray() -> [CPAnimationStep] {
         return [self]
     }
     
@@ -73,8 +79,8 @@ class CPAnimationStep: NSObject {
             self.runAnimated(animated)
         }
         
-        let currentStep = self.consumableSteps!.last!
-        if animated && currentStep.duration >= 0.02 {
+        let currentStep: CPAnimationStep = self.consumableSteps!.last as! CPAnimationStep
+        if (animated && currentStep.duration >= 0.02) {
             UIView.animateWithDuration(currentStep.duration, delay: currentStep.delay, options: currentStep.options, animations: currentStep.animation, completion: { (finished) -> Void in
                 if finished {
                     animationCompletionHandler()

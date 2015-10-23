@@ -10,7 +10,7 @@ import UIKit
 
 class CPAnimationSequence: CPAnimationStep {
     
-    private(set) var animationSteps: Array<AnyObject> = [AnyObject]()
+    private(set) var animationSteps: Array<CPAnimationStep> = [CPAnimationStep]()
     // MARK: Property overriden
     override var delay:NSTimeInterval {
         get {
@@ -47,7 +47,7 @@ class CPAnimationSequence: CPAnimationStep {
     // MARK: Initializion
     class func sequenceWithSteps(animationSteps: CPAnimationStep...) -> CPAnimationSequence {
         let animationSequence = CPAnimationSequence()
-        animationSequence.animationSteps = animationSteps
+        animationSequence.animationSteps = animationSteps.reverse()
         return animationSequence
     }
     
@@ -59,10 +59,10 @@ class CPAnimationSequence: CPAnimationStep {
         }
     }
     
-    override func animationStepsArray() -> [AnyObject] {
-        var steps = [AnyObject]()
+    override func animationStepsArray() -> [CPAnimationStep] {
+        var steps = [CPAnimationStep]()
         for step in self.animationSteps {
-            steps.append(step.animationStepsArray())
+            steps.appendContentsOf(step.animationStepsArray())
         }
         return steps
     }

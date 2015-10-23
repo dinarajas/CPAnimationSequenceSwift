@@ -11,7 +11,7 @@ import UIKit
 
 class CPAnimationProgram: CPAnimationStep {
     
-    private(set) var animationSteps: Array<AnyObject> = [AnyObject]()
+    private(set) var animationSteps: Array<CPAnimationStep> = [CPAnimationStep]()
     
     // MARK: Property overriden
     override var delay:NSTimeInterval {
@@ -44,7 +44,7 @@ class CPAnimationProgram: CPAnimationStep {
     // MARK: Initializion
     class func programWithSteps(animationSteps: CPAnimationStep...) -> CPAnimationProgram {
         let animationProgram = CPAnimationProgram()
-        animationProgram.animationSteps = animationSteps
+        animationProgram.animationSteps = animationSteps.reverse()
         return animationProgram
     }
 
@@ -61,7 +61,7 @@ class CPAnimationProgram: CPAnimationStep {
     // MARK: Sequence generator
     func longestDuration() -> NSTimeInterval {
         var longestAnimation: CPAnimationStep?
-        for current: CPAnimationStep in self.animationSteps as! [CPAnimationStep] {
+        for current: CPAnimationStep in self.animationSteps {
             let currentDuration = current.delay + current.duration
             if (longestAnimation == nil || currentDuration > longestAnimation!.delay + longestAnimation!.duration) {
                 longestAnimation = current
@@ -71,7 +71,7 @@ class CPAnimationProgram: CPAnimationStep {
         return Double(self.delay + longestAnimation!.delay + longestAnimation!.duration)
     }
     
-    override func animationStepsArray() -> [AnyObject] {
+    override func animationStepsArray() -> [CPAnimationStep] {
         var steps = [CPAnimationStep]()
         steps.append(CPAnimationStep.after(self.longestDuration(), animation: {}))
         steps.append(self)
