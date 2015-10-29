@@ -12,6 +12,7 @@ Pod::Spec.new do |s|
   s.author       = { "Dinesh Raja" => "dina.raja.s@gmail.com" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/dineshrajas/CPAnimationSequenceSwift.git", :tag => "0.0.1" }
-  s.source_files  = "SwiftAnimation"
+  s.source_files = "SwiftAnimation"
   s.requires_arc = true
+  s.frameworks   = 'Foundation', 'UIKit'
 end
