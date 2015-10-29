@@ -12,7 +12,7 @@ public class CPAnimationSequence: CPAnimationStep {
     
     private(set) var animationSteps: Array<CPAnimationStep> = [CPAnimationStep]()
     // MARK: Property overriden
-    override var delay:NSTimeInterval {
+    override public var delay:NSTimeInterval {
         get {
             return super.delay
         }
@@ -21,7 +21,7 @@ public class CPAnimationSequence: CPAnimationStep {
         }
     }
     
-    override var duration:NSTimeInterval {
+    override public var duration:NSTimeInterval {
         get {
             var fullDuration: NSTimeInterval = 0.0
             for current in self.animationStepsArray() {
@@ -35,7 +35,7 @@ public class CPAnimationSequence: CPAnimationStep {
         }
     }
     
-    override var options:UIViewAnimationOptions {
+    override public var options:UIViewAnimationOptions {
         get {
             return super.options
         }
