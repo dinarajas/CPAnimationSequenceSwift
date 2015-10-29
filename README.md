@@ -31,4 +31,4 @@ Feel free to comment, fork and submit pull requests. Thank you.
 
 Copyright (c) 2015 Dinesh Raja.
 
-The CPAnimationSequenceSwift component is released under the APACHE License.
+The CPAnimationSequenceSwift component is released under the [APACHE License](https://github.com/dineshrajas/CPAnimationSequenceSwift/blob/master/License.md).
