@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-class CPAnimationStep: CustomStringConvertible {
+public class CPAnimationStep: CustomStringConvertible {
     
-    var delay: NSTimeInterval = 0
-    var duration: NSTimeInterval = 0
-    var animation: () -> () = {}
-    var options: UIViewAnimationOptions = UIViewAnimationOptions.CurveEaseInOut
+    public var delay: NSTimeInterval = 0
+    public var duration: NSTimeInterval = 0
+    public var animation: () -> () = {}
+    public var options: UIViewAnimationOptions = UIViewAnimationOptions.CurveEaseInOut
     
-    var description: String {
+    public var description: String {
         get {
             return "Delay: \(self.delay), Duration: \(self.duration)"
         }
@@ -26,19 +26,19 @@ class CPAnimationStep: CustomStringConvertible {
     private var cancelRequested: Bool = false
     
     // MARK: Configuring animations
-    class func after(delay: NSTimeInterval, animation: () -> ()) -> CPAnimationStep {
+    public class func after(delay: NSTimeInterval, animation: () -> ()) -> CPAnimationStep {
         return self.after(delay, forDuration: 0, options: UIViewAnimationOptions.CurveEaseInOut, animation: animation)
     }
     
-    class func animateFor(duration: NSTimeInterval, animation: () -> ()) -> CPAnimationStep {
+    public class func animateFor(duration: NSTimeInterval, animation: () -> ()) -> CPAnimationStep {
         return self.after(0, forDuration: duration, options: UIViewAnimationOptions.CurveEaseInOut, animation: animation)
     }
     
-    class func after(delay: NSTimeInterval, forDuration: NSTimeInterval, animation: () -> ()) -> CPAnimationStep{
+    public class func after(delay: NSTimeInterval, forDuration: NSTimeInterval, animation: () -> ()) -> CPAnimationStep{
         return self.after(delay, forDuration: forDuration, options: UIViewAnimationOptions.CurveEaseInOut, animation: animation)
     }
     
-    class func after(delay: NSTimeInterval, forDuration: NSTimeInterval, options: UIViewAnimationOptions, animation: () -> ()) -> CPAnimationStep {
+    public class func after(delay: NSTimeInterval, forDuration: NSTimeInterval, options: UIViewAnimationOptions, animation: () -> ()) -> CPAnimationStep {
         let animationStep = CPAnimationStep()
         animationStep.delay = delay
         animationStep.duration = forDuration
@@ -60,7 +60,7 @@ class CPAnimationStep: CustomStringConvertible {
         return self.animation
     }
     
-    func runAnimated(animated: Bool) {
+    public func runAnimated(animated: Bool) {
         if self.cancelRequested {
             return
         }
@@ -100,11 +100,11 @@ class CPAnimationStep: CustomStringConvertible {
         }
     }
     
-    func run() {
+    public func run() {
         self.runAnimated(true)
     }
     
-    func cancel() {
+    public func cancel() {
         self.cancelRequested = true
     }
 }

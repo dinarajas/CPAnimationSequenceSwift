@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CPAnimationSequence: CPAnimationStep {
+public class CPAnimationSequence: CPAnimationStep {
     
     private(set) var animationSteps: Array<CPAnimationStep> = [CPAnimationStep]()
     // MARK: Property overriden
@@ -45,14 +45,14 @@ class CPAnimationSequence: CPAnimationStep {
     }
 
     // MARK: Initializion
-    class func sequenceWithSteps(animationSteps: CPAnimationStep...) -> CPAnimationSequence {
+    public class func sequenceWithSteps(animationSteps: CPAnimationStep...) -> CPAnimationSequence {
         let animationSequence = CPAnimationSequence()
         animationSequence.animationSteps = animationSteps.reverse()
         return animationSequence
     }
     
     // MARK: Function overriden
-    override func cancel() {
+    public override func cancel() {
         super.cancel()
         for currentStep in self.animationSteps {
             currentStep.cancel()

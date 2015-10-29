@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class CPAnimationProgram: CPAnimationStep {
+public class CPAnimationProgram: CPAnimationStep {
     
     private(set) var animationSteps: Array<CPAnimationStep> = [CPAnimationStep]()
     
@@ -42,14 +42,14 @@ class CPAnimationProgram: CPAnimationStep {
     }
     
     // MARK: Initializion
-    class func programWithSteps(animationSteps: CPAnimationStep...) -> CPAnimationProgram {
+    public class func programWithSteps(animationSteps: CPAnimationStep...) -> CPAnimationProgram {
         let animationProgram = CPAnimationProgram()
         animationProgram.animationSteps = animationSteps.reverse()
         return animationProgram
     }
 
     // MARK: Function Overriden
-    override func cancel() {
+    public override func cancel() {
         super.cancel()
         if self.animationSteps.count != 0 {
             for animation in self.animationSteps {
