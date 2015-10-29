@@ -1,9 +1,0 @@
-version: "Apple Swift version 2.1 (swiftlang-700.1.101.6 clang-700.1.76)"
-options: "6a22d8f552f18416553b73a93d1c3136"
-build_time: [499442958, 71649000]
-inputs:
-  "/Users/DineshRaja/Documents/My Projects/CPAnimationSequenceSwift/Example/CPAnimationSequenceSwift/AppDelegate.swift": [497984605, 0]
-  "/Users/DineshRaja/Documents/My Projects/CPAnimationSequenceSwift/SwiftAnimation/CPAnimationProgram.swift": [9223372036854775807, 0]
-  "/Users/DineshRaja/Documents/My Projects/CPAnimationSequenceSwift/SwiftAnimation/CPAnimationSequence.swift": [9223372036854775807, 0]
-  "/Users/DineshRaja/Documents/My Projects/CPAnimationSequenceSwift/SwiftAnimation/CPAnimationStep.swift": [9223372036854775807, 0]
-  "/Users/DineshRaja/Documents/My Projects/CPAnimationSequenceSwift/Example/CPAnimationSequenceSwift/ViewController.swift": [497984605, 0]
