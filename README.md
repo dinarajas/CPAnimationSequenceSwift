@@ -26,3 +26,9 @@ Swift version of [CPAnimationSequence](https://github.com/yangmeyer/CPAnimationS
 * Soon, we will include support for Cocoapods and Carthage.
 
 Feel free to comment, fork and submit pull requests. Thank you.
+
+###License
+
+Copyright (c) 2015 Dinesh Raja.
+
+The CPAnimationSequenceSwift component is released under the APACHE License.
