@@ -8,11 +8,10 @@ Pod::Spec.new do |s|
                    easy to create sequential animations for views.
                    DESC
   s.homepage     = "https://github.com/yangmeyer/CPAnimationSequence"
-  s.license      = { :type => "APACHE", :file => "License.md" }
   s.author       = { "Dinesh Raja" => "dina.raja.s@gmail.com" }
-  s.platform     = :ios, "8.0"
+  s.ios.deployment_target = '8.0'
   s.source       = { :git => "https://github.com/dineshrajas/CPAnimationSequenceSwift.git", :tag => "0.0.1" }
-  s.source_files = "SwiftAnimation"
-  s.requires_arc = true
+  s.source_files = "SwiftAnimation/*.swift"
   s.frameworks   = 'Foundation', 'UIKit'
+  s.requires_arc = true
 end
