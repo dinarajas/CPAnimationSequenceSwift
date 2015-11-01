@@ -13,7 +13,7 @@ Swift version of [CPAnimationSequence](https://github.com/yangmeyer/CPAnimationS
 	platform :ios, "8.0"
 	use_frameworks!
 	
-	pod 'SwiftValidator', '3.0.1' 
+	pod 'CPAnimationSequenceSwift', '0.0.1' 
 
 * If you want to add support from `iOS 7`, you can drag and drop source files into your project and use it. `Cocoapods` for swift supports from `iOS 8` only because of dynamic frameworks.
 
