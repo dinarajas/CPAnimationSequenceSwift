@@ -1,7 +1,24 @@
 Swift version of [CPAnimationSequence](https://github.com/yangmeyer/CPAnimationSequence). All credits goes to [Yang Meyer](https://github.com/yangmeyer). Thank you for his inspiring work.
 
 # CPAnimationSequenceSwift
-### Usage:
+
+## Installation
+* If you don't use Cocoapods, you can drag and drop the files from **SwiftAnimation** folder into your project and use it.
+
+* If you use Cocoapods, you can see below on how to add CPAnimationSequenceSwift into podfile.
+
+### Podfile
+
+	source 'https://github.com/CocoaPods/Specs.git'
+	platform :ios, "8.0"
+	use_frameworks!
+	
+	pod 'SwiftValidator', '3.0.1' 
+
+* If you want to add support from `iOS 7`, you can drag and drop source files into your project and use it. `Cocoapods` for swift supports from `iOS 8` only because of dynamic frameworks.
+
+
+### Usage
 
         let animationSequence = CPAnimationSequence.sequenceWithSteps(
             CPAnimationStep.animateFor(4.0, animation: { self.logoView.alpha = 1.0 }),
@@ -18,17 +35,14 @@ Swift version of [CPAnimationSequence](https://github.com/yangmeyer/CPAnimationS
         animationSequence.run()
 
 ### Requirements
-* CPAnimationSequenceSwift uses `Swift 2.0`. So, you need to use `Xcode 7` or later to compile this library.
-* You can simply drag the files from `SwiftAnimation` folder to your project and use it.
+* CPAnimationSequenceSwift uses `Swift 2.0`. It requires `Xcode 7` or later.
 
-### Enhancements
-* Add an example program to use CPAnimationSequenceSwift
-* Soon, we will include support for Cocoapods and Carthage.
-
-Feel free to comment, fork and submit pull requests. Thank you.
 
 ###License
 
 Copyright (c) 2015 Dinesh Raja.
 
 The CPAnimationSequenceSwift component is released under the [APACHE License](https://github.com/dineshrajas/CPAnimationSequenceSwift/blob/master/License.md).
+
+
+Feel free to comment, fork and submit pull requests. Thank you.
