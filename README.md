@@ -3,9 +3,9 @@ Swift version of [CPAnimationSequence](https://github.com/yangmeyer/CPAnimationS
 # CPAnimationSequenceSwift
 
 ## Installation
-* If you don't use Cocoapods, you can drag and drop the files from **SwiftAnimation** folder into your project and use it.
+* If you don't use CocoaPods, you can drag and drop the files from **SwiftAnimation** folder into your project and use it.
 
-* If you use Cocoapods, you can see below on how to add CPAnimationSequenceSwift into podfile.
+* If you use CocoaPods, you can see below on how to add CPAnimationSequenceSwift into podfile.
 
 ### Podfile
 
@@ -15,7 +15,7 @@ Swift version of [CPAnimationSequence](https://github.com/yangmeyer/CPAnimationS
 	
 		pod 'CPAnimationSequenceSwift', '0.0.1' 
 
-* If you want to add support from `iOS 7`, you can drag and drop source files into your project and use it. `Cocoapods` for swift supports from `iOS 8` only because of dynamic frameworks.
+* If you want to add support from `iOS 7`, you can drag and drop source files into your project and use it. `CocoaPods` for swift supports from `iOS 8` only because of dynamic frameworks.
 
 
 ### Usage
