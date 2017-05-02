@@ -11,10 +11,10 @@ import UIKit
 
 public class CPAnimationStep: CustomStringConvertible {
     
-    public var delay: NSTimeInterval = 0
-    public var duration: NSTimeInterval = 0
+    public var delay: TimeInterval = 0
+    public var duration: TimeInterval = 0
     public var animation: () -> () = {}
-    public var options: UIViewAnimationOptions = UIViewAnimationOptions.CurveEaseInOut
+    public var options: UIViewAnimationOptions = UIViewAnimationOptions()
     
     public var description: String {
         get {
@@ -22,23 +22,23 @@ public class CPAnimationStep: CustomStringConvertible {
         }
     }
     
-    private var consumableSteps: Array<AnyObject>?
-    private var cancelRequested: Bool = false
+    fileprivate var consumableSteps: Array<AnyObject>?
+    fileprivate var cancelRequested: Bool = false
     
     // MARK: Configuring animations
-    public class func after(delay: NSTimeInterval, animation: () -> ()) -> CPAnimationStep {
-        return self.after(delay, forDuration: 0, options: UIViewAnimationOptions.CurveEaseInOut, animation: animation)
+    public class func after(_ delay: TimeInterval, animation: @escaping () -> ()) -> CPAnimationStep {
+        return self.after(delay, forDuration: 0, options: UIViewAnimationOptions(), animation: animation)
     }
     
-    public class func animateFor(duration: NSTimeInterval, animation: () -> ()) -> CPAnimationStep {
-        return self.after(0, forDuration: duration, options: UIViewAnimationOptions.CurveEaseInOut, animation: animation)
+    public class func animateFor(_ duration: TimeInterval, animation: @escaping () -> ()) -> CPAnimationStep {
+        return self.after(0, forDuration: duration, options: UIViewAnimationOptions(), animation: animation)
     }
     
-    public class func after(delay: NSTimeInterval, forDuration: NSTimeInterval, animation: () -> ()) -> CPAnimationStep{
-        return self.after(delay, forDuration: forDuration, options: UIViewAnimationOptions.CurveEaseInOut, animation: animation)
+    public class func after(_ delay: TimeInterval, forDuration: TimeInterval, animation: @escaping () -> ()) -> CPAnimationStep{
+        return self.after(delay, forDuration: forDuration, options: UIViewAnimationOptions(), animation: animation)
     }
     
-    public class func after(delay: NSTimeInterval, forDuration: NSTimeInterval, options: UIViewAnimationOptions, animation: () -> ()) -> CPAnimationStep {
+    public class func after(_ delay: TimeInterval, forDuration: TimeInterval, options: UIViewAnimationOptions, animation: @escaping () -> ()) -> CPAnimationStep {
         let animationStep = CPAnimationStep()
         animationStep.delay = delay
         animationStep.duration = forDuration
@@ -48,19 +48,19 @@ public class CPAnimationStep: CustomStringConvertible {
     }
 
     // MARK: Execute animations
-    class func executeAnimations(animations: () -> (), afterDelay: NSTimeInterval) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(NSEC_PER_SEC) * afterDelay)), dispatch_get_main_queue(), animations)
+    class func executeAnimations(_ animations: @escaping () -> (), afterDelay: TimeInterval) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(Double(NSEC_PER_SEC) * afterDelay)) / Double(NSEC_PER_SEC), execute: animations)
     }
     
     func animationStepsArray() -> [CPAnimationStep] {
         return [self]
     }
     
-    func animationStep(animated: Bool) -> (() -> ()) {
+    func animationStep(_ animated: Bool) -> (() -> ()) {
         return self.animation
     }
     
-    public func runAnimated(animated: Bool) {
+    public func runAnimated(_ animated: Bool) {
         if self.cancelRequested {
             return
         }
@@ -81,7 +81,7 @@ public class CPAnimationStep: CustomStringConvertible {
         
         let currentStep: CPAnimationStep = self.consumableSteps!.last as! CPAnimationStep
         if (animated && currentStep.duration >= 0.02) {
-            UIView.animateWithDuration(currentStep.duration, delay: currentStep.delay, options: currentStep.options, animations: currentStep.animation, completion: { (finished) -> Void in
+            UIView.animate(withDuration: currentStep.duration, delay: currentStep.delay, options: currentStep.options, animations: currentStep.animation, completion: { (finished) -> Void in
                 if finished {
                     animationCompletionHandler()
                 }
