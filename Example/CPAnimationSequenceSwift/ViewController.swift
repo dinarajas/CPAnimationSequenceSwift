@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let animationSequence = CPAnimationSequence.sequenceWithSteps(
             CPAnimationStep.animateFor(1.0, animation: { self.button1.alpha = 1.0 }),

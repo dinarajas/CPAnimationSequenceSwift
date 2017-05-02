@@ -12,9 +12,9 @@
 		568B13501BCC1F5D00E1575F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 568B134E1BCC1F5D00E1575F /* Main.storyboard */; };
 		568B13521BCC1F5D00E1575F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 568B13511BCC1F5D00E1575F /* Assets.xcassets */; };
 		568B13551BCC1F5D00E1575F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 568B13531BCC1F5D00E1575F /* LaunchScreen.storyboard */; };
-		569EB2EA1BE2600D0014F532 /* CPAnimationProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569EB2E71BE2600D0014F532 /* CPAnimationProgram.swift */; };
-		569EB2EB1BE2600D0014F532 /* CPAnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569EB2E81BE2600D0014F532 /* CPAnimationSequence.swift */; };
-		569EB2EC1BE2600D0014F532 /* CPAnimationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569EB2E91BE2600D0014F532 /* CPAnimationStep.swift */; };
+		8FCD01A51EB8B07D00ED2BDF /* CPAnimationProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD01A21EB8B07D00ED2BDF /* CPAnimationProgram.swift */; };
+		8FCD01A61EB8B07D00ED2BDF /* CPAnimationSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD01A31EB8B07D00ED2BDF /* CPAnimationSequence.swift */; };
+		8FCD01A71EB8B07D00ED2BDF /* CPAnimationStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCD01A41EB8B07D00ED2BDF /* CPAnimationStep.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,9 +25,9 @@
 		568B13511BCC1F5D00E1575F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		568B13541BCC1F5D00E1575F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		568B13561BCC1F5D00E1575F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		569EB2E71BE2600D0014F532 /* CPAnimationProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPAnimationProgram.swift; path = ../../SwiftAnimation/CPAnimationProgram.swift; sourceTree = "<group>"; };
-		569EB2E81BE2600D0014F532 /* CPAnimationSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPAnimationSequence.swift; path = ../../SwiftAnimation/CPAnimationSequence.swift; sourceTree = "<group>"; };
-		569EB2E91BE2600D0014F532 /* CPAnimationStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPAnimationStep.swift; path = ../../SwiftAnimation/CPAnimationStep.swift; sourceTree = "<group>"; };
+		8FCD01A21EB8B07D00ED2BDF /* CPAnimationProgram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPAnimationProgram.swift; sourceTree = "<group>"; };
+		8FCD01A31EB8B07D00ED2BDF /* CPAnimationSequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPAnimationSequence.swift; sourceTree = "<group>"; };
+		8FCD01A41EB8B07D00ED2BDF /* CPAnimationStep.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPAnimationStep.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,21 +65,21 @@
 				568B134E1BCC1F5D00E1575F /* Main.storyboard */,
 				568B13511BCC1F5D00E1575F /* Assets.xcassets */,
 				568B13531BCC1F5D00E1575F /* LaunchScreen.storyboard */,
-				568B135D1BCC1FDF00E1575F /* SwiftAnimation */,
 				568B13561BCC1F5D00E1575F /* Info.plist */,
+				8FCD01A11EB8B07D00ED2BDF /* SwiftAnimation */,
 			);
 			path = CPAnimationSequenceSwift;
 			sourceTree = "<group>";
 		};
-		568B135D1BCC1FDF00E1575F /* SwiftAnimation */ = {
+		8FCD01A11EB8B07D00ED2BDF /* SwiftAnimation */ = {
 			isa = PBXGroup;
 			children = (
-				569EB2E71BE2600D0014F532 /* CPAnimationProgram.swift */,
-				569EB2E81BE2600D0014F532 /* CPAnimationSequence.swift */,
-				569EB2E91BE2600D0014F532 /* CPAnimationStep.swift */,
+				8FCD01A21EB8B07D00ED2BDF /* CPAnimationProgram.swift */,
+				8FCD01A31EB8B07D00ED2BDF /* CPAnimationSequence.swift */,
+				8FCD01A41EB8B07D00ED2BDF /* CPAnimationStep.swift */,
 			);
 			path = SwiftAnimation;
-			sourceTree = SOURCE_ROOT;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -113,6 +113,8 @@
 				TargetAttributes = {
 					568B13461BCC1F5C00E1575F = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = 66N9Q2L87B;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -152,11 +154,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				569EB2EB1BE2600D0014F532 /* CPAnimationSequence.swift in Sources */,
+				8FCD01A61EB8B07D00ED2BDF /* CPAnimationSequence.swift in Sources */,
 				568B134D1BCC1F5D00E1575F /* ViewController.swift in Sources */,
 				568B134B1BCC1F5D00E1575F /* AppDelegate.swift in Sources */,
-				569EB2EA1BE2600D0014F532 /* CPAnimationProgram.swift in Sources */,
-				569EB2EC1BE2600D0014F532 /* CPAnimationStep.swift in Sources */,
+				8FCD01A51EB8B07D00ED2BDF /* CPAnimationProgram.swift in Sources */,
+				8FCD01A71EB8B07D00ED2BDF /* CPAnimationStep.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,10 +271,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 66N9Q2L87B;
 				INFOPLIST_FILE = CPAnimationSequenceSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.aprilwings.CPAnimationSequenceSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = me.dinaraja.CPAnimationSequenceSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -280,10 +284,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 66N9Q2L87B;
 				INFOPLIST_FILE = CPAnimationSequenceSwift/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = io.aprilwings.CPAnimationSequenceSwift;
+				PRODUCT_BUNDLE_IDENTIFIER = me.dinaraja.CPAnimationSequenceSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
